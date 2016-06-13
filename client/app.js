@@ -4,6 +4,13 @@ Template.messages.helpers({
   messages: Messages.find({})
 });
 
+Template.listings.helpers({
+  channels: function () {
+    return Channels.find();
+  }
+});
+
+
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
