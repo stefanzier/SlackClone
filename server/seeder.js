@@ -2,8 +2,8 @@ Meteor.startup(function() {
 
   Meteor.users.remove({});
   Accounts.createUser({
-    username: "scotchio",
-    email: "scotch@example.com",
+    username: "slackbot",
+    email: "slackbot@example.com",
     password: "dummypassword"
   });
 
