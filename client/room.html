@@ -1,18 +1,11 @@
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title></title>
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,700,900' type='text/css'>  
-</head>
-
-<body>
+<template name="app">
   {{> header}}
   
   <div class="main">
     {{> loginButtons}}
     {{> listings}}
-    {{> messages}}
+    {{> yield}}
   </div>
 
   {{> footer}}
-</body>
+</template>

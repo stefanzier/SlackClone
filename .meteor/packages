@@ -25,3 +25,4 @@ accounts-ui
 accounts-github
 email
 matb33:collection-hooks
+iron:router
