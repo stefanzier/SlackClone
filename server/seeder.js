@@ -20,6 +20,7 @@ Meteor.startup(function() {
     name: "random"
   });
 
+
   if (Messages.find({}).count() === 0){
     _(10).times(function(n) {
       Factory.create('message');

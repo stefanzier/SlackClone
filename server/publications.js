@@ -1,5 +1,5 @@
 Meteor.publish('messages', function () {
-  return Messages.find();
+  return Messages.find({channel: channel});
 });
 
 Meteor.publish('channels', function () {

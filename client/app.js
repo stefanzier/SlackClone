@@ -4,6 +4,13 @@ Template.messages.helpers({
   messages: Messages.find({})
 });
 
+Template.messages.onCreated(function () {
+  var self = this;
+  self.autorun(function() {
+    self.subscribe('messages', Session.get('channel'));
+  });
+});
+
 Template.listings.helpers({
   channels: function () {
     return Channels.find();
@@ -16,6 +23,26 @@ Accounts.ui.config({
 });
 
 Meteor.subscribe('allUsernames');
+
+Meteor.startup(function () {
+  Session.set('channel', 'general');
+});
+
+Template.channel.events({
+  'click .channel': function (e) {
+    Session.set('channel', this.name);
+  }
+});
+
+Template.channel.helpers({
+  active: function () {
+    if (Session.get('channel') === this.name) {
+      return "active";
+    } else {
+      return "";
+    }
+  }
+});
 
 Template.registerHelper("usernameFromId", function (userId) {
   var user = Meteor.users.findOne({_id: userId});
