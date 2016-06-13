@@ -1,6 +1,6 @@
 Meteor.startup(function () {
   smtp = {
-    username: 'SlackClone',
+    username: 'szier@icloud.com',
     password: 'kTmhmK7FlDZI3IMyxUBjmQ',
     server:   'smtp.mandrillapp.com',
     port: 587
